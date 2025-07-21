@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>QR Code Generator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 30px;
+    }
+
+    input, select {
+      padding: 10px;
+      margin: 5px;
+      width: 80%;
+      max-width: 400px;
+    }
+
+    button {
+      padding: 10px 20px;
+      margin-top: 40px;
+      background-color:#fe2c55;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius:5px;
+    }
+
+    #qrcode {
+      margin-top: 50px;
+      display: flex;
+      justify-content: center;
+    }
+    #dimensions{
+        width:80%;
+        max-width: 400px;
+      display:flex;
+      justify-content: center;
+      align-items: center;
+      margin:auto;
+    }
+    #dimensions #width{
+        margin-right:50px;
+    }
+    #dimensions input{
+        width:100px
+    }
+  </style>
+</head>
+<body>
+
+  <h1>QR Code Generator</h1>
+  <input type="text" id="qrText" placeholder="Enter text or URL" />
+  <br />
+
+  <div id="dimensions">
+    <label for="width">Width:</label>
+    <input type="number" id="width" value="200"/>
+
+    <label for="height">Height:</label>
+    <input type="number" id="height" value="200"  />
+  </div>
+ 
+  <button onclick="generateQR()">Generate QR Code</button>
+
+  <div id="qrcode"></div>
+
+  <!-- QRCode.js -->
+  <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+  <script>
+    function generateQR() {
+      const text = document.getElementById("qrText").value;
+      const width = parseInt(document.getElementById("width").value,10);
+      const height = parseInt(document.getElementById("height").value,10);
+      const qrContainer = document.getElementById("qrcode");
+
+      qrContainer.innerHTML = ""; // clear previous
+
+      if (text.trim() !== "") {
+        new QRCode(qrContainer, {
+          text: text,
+          width: width,
+          height: height,
+        });
+      }
+    }
+  </script>
+</body>
+</html>
+
