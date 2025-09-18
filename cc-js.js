@@ -3,7 +3,7 @@ let bgApplied = false;
      
 window.addEventListener("message", function (event) {
   if (event.data) {
-    console.log(event);
+    console.log(event.data.type);
     if(event.data === "kscrollReveal"){
      if(!bgApplied){
        showKPanelBg(true);
