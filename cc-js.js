@@ -2,17 +2,16 @@
 let bgApplied = false;
      
 window.addEventListener("message", function (event) {
-  if (event.data) {
+ const message = event.data;
+  if (message) {
     console.log(event);
     console.log(event.data.type);
    console.log(event.data);
     console.log(event.data?.type);
-    if(event.data === "kscrollReveal"){
-     if(!bgApplied){
-       showKPanelBg(true);
-     } 
+    if(message.event === "kscrollReveal"){
+       showKPanelBg(true); 
     }
-   if(event.data === "kscrollTop"){
+   if(message.data === "kscrollTop"){
       showKPanelBg(false);
     }
   }
