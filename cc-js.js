@@ -4,11 +4,19 @@ let bgApplied = false;
 window.addEventListener("message", function (event) {
   if (event.data) {
     console.log(event.data);
+    if(event.data === "kscrollReveal"){
+     if(!bgApplied){
+       showKPanelBg(true);
+     } 
+    }
+   if(event.data === "kscrollTop"){
+      showKPanelBg(false);
+    }
   }
 });
 
 
-function showKPanelBg(){
+function showKPanelBg(state){
   const panels = document.querySelectorAll('.panel');
   panels.forEach(panel => {
       if(state){
