@@ -21,13 +21,13 @@ function showKPanelBg(state){
        panel.style.backgroundRepeat = 'no-repeat';
        panel.style.backgroundPosition = '183% 47%';
        panel.style.backgroundSize = '100% 100vh';
-       bgApplied = 'true'; // prevent reapplying
+       bgApplied = true;// prevent reapplying
      }else if(!state && bgApplied){
        panel.style.backgroundImage = 'unset'; 
        panel.style.backgroundRepeat = 'no-repeat';
        panel.style.backgroundPosition = 'unset';
        panel.style.backgroundSize = 'unset';
-       bgApplied = 'false'; // prevent reapplying
+       bgApplied = false; // prevent reapplying
      }
 
 }
