@@ -19,8 +19,8 @@ function showKPanelBg(state){
      if(state && !bgApplied){
        panel.style.backgroundImage = 'url(purebg.jpg)'; 
        panel.style.backgroundRepeat = 'no-repeat';
-       panel.style.backgroundPosition = 'center top';
-       panel.style.backgroundSize = '2300px 1314px';
+       panel.style.backgroundPosition = '183% 47%';
+       panel.style.backgroundSize = '100% 100vh';
        bgApplied = 'true'; // prevent reapplying
      }else if(!state && bgApplied){
        panel.style.backgroundImage = 'unset'; 
