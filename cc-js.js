@@ -31,5 +31,25 @@ function showKPanelBg(state){
        // panel.style.backgroundSize = 'unset';
        bgApplied = false; // prevent reapplying
      }
-
 }
+
+// inject style
+var cckscript = document.createElement("script");
+const cckscript.innerHTML = `.topPanelScroll{
+    background-image: url(purebg.jpg);
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: 1920px 1080px;
+}@media (min-width: 2000px) {
+    .left, .right {
+        background-size: 70% auto;
+        background-position: center;
+    }
+    .topPanelScroll{
+        background-position: center -51px;
+        background-size: 2500px 1300px;
+    }
+}`
+
+var parentDoc = window.parent.document;
+  parentDoc.body.appendChild(cckscript)
