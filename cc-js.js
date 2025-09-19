@@ -15,7 +15,7 @@ window.addEventListener("message", function (event) {
 
 
 function showKPanelBg(state){
-  const panels = document.querySelector('.panel.top');
+  const panel = document.querySelector('.panel.top');
      if(state && !bgApplied){
        panel.style.backgroundImage = 'url(purebg.jpg)'; 
        panel.style.backgroundRepeat = 'no-repeat';
