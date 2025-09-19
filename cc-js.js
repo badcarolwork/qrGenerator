@@ -17,16 +17,18 @@ window.addEventListener("message", function (event) {
 function showKPanelBg(state){
   const panel = document.querySelector('.panel.top');
      if(state && !bgApplied){
-       panel.style.backgroundImage = 'url(https://i.imgur.com/GgE23KX.jpeg)'; 
-       panel.style.backgroundRepeat = 'no-repeat';
-       panel.style.backgroundPosition = 'center top';
-       panel.style.backgroundSize = '100% 100vh';
+       panel.classList.add("topPanelScroll");
+       // panel.style.backgroundImage = 'url(https://cdn.flashtalking.com/225135/5623249/purebg.jpg)'; 
+       // panel.style.backgroundRepeat = 'no-repeat';
+       // panel.style.backgroundPosition = 'center top';
+       // panel.style.backgroundSize = '100% 100vh';
        bgApplied = true;// prevent reapplying
      }else if(!state && bgApplied){
-       panel.style.backgroundImage = 'unset'; 
-       panel.style.backgroundRepeat = 'no-repeat';
-       panel.style.backgroundPosition = 'unset';
-       panel.style.backgroundSize = 'unset';
+       panel.classList.remove("topPanelScroll");
+       // panel.style.backgroundImage = 'unset'; 
+       // panel.style.backgroundRepeat = 'no-repeat';
+       // panel.style.backgroundPosition = 'unset';
+       // panel.style.backgroundSize = 'unset';
        bgApplied = false; // prevent reapplying
      }
 
